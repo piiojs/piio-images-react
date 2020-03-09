@@ -1,2 +1,2 @@
-# rio-react
-Rio component for react
+# Piio Image component
+Piio Image component for react
