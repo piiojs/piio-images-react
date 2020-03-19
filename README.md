@@ -1,5 +1,4 @@
 # Piio component for React
----
 
 Fully optimized images for each visitor, device and browser.
 
@@ -11,7 +10,6 @@ More info at https://piio.co/
 Register at https://app.piio.co/register
 
 ## Getting started
----
 
 #### NPM Installation
 ```
