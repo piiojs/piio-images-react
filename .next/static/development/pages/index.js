@@ -40,17 +40,28 @@ function (_React$Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(PiioElement, [{
     key: "render",
     value: function render() {
+      var maxW100 = {
+        maxWidth: "100%"
+      };
+      var backgroundProps = {
+        minHeight: "400px",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        color: "#ffc107"
+      };
       var TagName = this.props.tag.toLowerCase();
 
       var parsedProps = _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, this.props);
 
       delete parsedProps['path'];
 
-      if (TagName === 'img') {
+      if (TagName === 'img' || TagName === 'source') {
         parsedProps['data-piio'] = this.props.path;
+        parsedProps['style'] = maxW100;
         return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(TagName, parsedProps, null);
       } else {
         parsedProps['data-piio-bck'] = this.props.path;
+        parsedProps['style'] = backgroundProps;
         return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(TagName, parsedProps, this.props.children);
       }
     }
@@ -3389,10 +3400,10 @@ module.exports = (__webpack_require__(/*! dll-reference dll_5f137288facb1107b491
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fstellasteinfeld%2FDocuments%2FProjects%2Freact-component%2Fpages%2Findex.js!./":
-/*!***************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fstellasteinfeld%2FDocuments%2FProjects%2Freact-component%2Fpages%2Findex.js ***!
-  \***************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FApplications%2FMAMP%2Fhtdocs%2Fpiio%2Fcomponents%2Fpiio-image-react%2Fpages%2Findex.js!./":
+/*!******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FApplications%2FMAMP%2Fhtdocs%2Fpiio%2Fcomponents%2Fpiio-image-react%2Fpages%2Findex.js ***!
+  \******************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3841,7 +3852,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "./node_modules/next/dist/next-server/lib/head.js");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_piioElement__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/piioElement */ "./components/piioElement.js");
-var _jsxFileName = "/Users/stellasteinfeld/Documents/Projects/react-component/pages/index.js";
+var _jsxFileName = "/Applications/MAMP/htdocs/piio/components/piio-image-react/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -3861,76 +3872,113 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: this
   }, __jsx("link", {
     rel: "preconnect",
-    href: "https://piio.co",
+    href: "//pcdn.piiojs.com",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 7
     },
     __self: this
   }), __jsx("link", {
-    rel: "preconnect",
-    href: "//pcdn.piiojs.com",
+    rel: "preload",
+    as: "script",
+    href: "//pcdn.piiojs.com/demo/image.min.js",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 8
     },
     __self: this
-  }), __jsx("link", {
-    rel: "preconnect",
-    href: "//piio.co",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 9
-    },
-    __self: this
-  }), __jsx("link", {
-    rel: "preconnect",
-    href: "//www.googletagmanager.com",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 10
-    },
-    __self: this
-  }), __jsx("link", {
-    rel: "preload",
-    as: "script",
-    href: "//js.piio.co/piio/piio.min.js",
+  })), __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 11
     },
     __self: this
-  })), __jsx("script", {
-    src: "//js.piio.co/piio/piio.min.js",
+  }, "Piio images for Vue.js"), __jsx("h2", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: this
+  }, "Image tag example"), __jsx(_components_piioElement__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    path: "https://secureservercdn.net/198.71.233.106/w4y.80f.myftpupload.com/wp-content/uploads/2020/02/backpack-desktop.jpg",
+    tag: "img",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 13
     },
     __self: this
   }), __jsx(_components_piioElement__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    tag: "img",
-    path: "https://www.publitas.com/blog/holiday-inspiration-great-examples-of-guides-and-christmas-catalogs/header.jpg",
-    alt: "hola",
-    "class": "clase",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14
-    },
-    __self: this
-  }), __jsx(_components_piioElement__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    tag: "a",
-    path: "https://www.publitas.com/blog/holiday-inspiration-great-examples-of-guides-and-christmas-catalogs/header.jpg",
+    path: "https://secureservercdn.net/198.71.233.106/w4y.80f.myftpupload.com/wp-content/uploads/2020/02/backpack-desktop.jpg",
+    tag: "IMG",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 15
     },
     __self: this
-  }, "hola"), __jsx("script", {
+  }), __jsx("h2", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: this
+  }, "Background example"), __jsx(_components_piioElement__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    path: "https://secureservercdn.net/198.71.233.106/w4y.80f.myftpupload.com/wp-content/uploads/2020/02/backpack-desktop.jpg",
+    tag: "div",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: this
+  }, __jsx("h1", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: this
+  }, "Your website faster,your images sharper.")), __jsx("h2", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    __self: this
+  }, "Picture tag with multiple sources example"), __jsx("picture", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: this
+  }, __jsx(_components_piioElement__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    path: "https://secureservercdn.net/198.71.233.106/w4y.80f.myftpupload.com/wp-content/uploads/2020/02/backpack-desktop.jpg",
+    tag: "source",
+    media: "(min-width:969px)",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: this
+  }), __jsx(_components_piioElement__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    path: "https://secureservercdn.net/198.71.233.106/w4y.80f.myftpupload.com/wp-content/uploads/2020/02/backpack-mobile.jpg",
+    tag: "source",
+    media: "(max-width:969px)",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26
+    },
+    __self: this
+  }), __jsx(_components_piioElement__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    path: "https://secureservercdn.net/198.71.233.106/w4y.80f.myftpupload.com/wp-content/uploads/2020/02/backpack-mobile.jpg",
+    tag: "img",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: this
+  })), __jsx("script", {
     src: "/app.min.js",
     async: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 32
     },
     __self: this
   }));
@@ -3938,14 +3986,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 /***/ }),
 
-/***/ 1:
-/*!*******************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fstellasteinfeld%2FDocuments%2FProjects%2Freact-component%2Fpages%2Findex.js ***!
-  \*******************************************************************************************************************************************************/
+/***/ 2:
+/*!**********************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FApplications%2FMAMP%2Fhtdocs%2Fpiio%2Fcomponents%2Fpiio-image-react%2Fpages%2Findex.js ***!
+  \**********************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fstellasteinfeld%2FDocuments%2FProjects%2Freact-component%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fstellasteinfeld%2FDocuments%2FProjects%2Freact-component%2Fpages%2Findex.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FApplications%2FMAMP%2Fhtdocs%2Fpiio%2Fcomponents%2Fpiio-image-react%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FApplications%2FMAMP%2Fhtdocs%2Fpiio%2Fcomponents%2Fpiio-image-react%2Fpages%2Findex.js!./");
 
 
 /***/ }),
@@ -3961,5 +4009,5 @@ module.exports = dll_5f137288facb1107b491;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

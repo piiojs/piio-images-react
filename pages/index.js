@@ -29,7 +29,6 @@ export default ()=>(
       </PiioElement>
     </picture>
 
-
     <script src="/app.min.js" async></script>
   </div>
 )
