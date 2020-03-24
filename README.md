@@ -1,19 +1,23 @@
-# Piio component for React
+# Piio Images for React
 
-Fully optimized images for each visitor, device and browser.
+Piio Images will allow you to easily optimize all your images based on your visitor's browser and screen-size. With thoughtful compression and new-generation formats, your images will have crisp quality and consume less data, including Lazy Loading, out of the box.
 
-- Piio isn’t an image compressor. We deliver pixel-perfect images for each visitor based on their browser and device, in real time.
-- Piio is plug and play.
-- You get faster page load times without the hassle of running batch processing scripts
+Piio Images will also improve your load time and reduce unnecessary network usage.
 
-More info at https://piio.co/
-Register at https://app.piio.co/register
+- Effortless integration
+- Pixel-perfect responsive images
+- Thoughtful image compression
+- High DPI Support and Scalability
+- WebP and other new-generation formats and compatible with legacy browsers
+- Lazy loading integrated
+
+Read more about <a href="https://piio.co/" target="_blank">Piio</a> and register at <a href="https://app.piio.co/register" target="_blank">https://app.piio.co/register</a>
 
 ## Getting started
 
 #### NPM Installation
 ```
-npm install piio-image-react
+npm install piio-images-react
 ```
 #### Manual Installation
 
@@ -30,10 +34,19 @@ import PiioElement from '../components/piioElement'
 ### Set up Piio on your code
 
 You need to insert Piio's script at the end of your html and before all the other JS files:
+
 ```html
-<script src="//pcdn.piiojs.com/[domain key]/image.min.js"></script>
+<script>
+(function(i,m,a,g,e) {
+    e = i.getElementsByTagName(m)[0], (g = i.createElement(m)).src = "//pcdn.piiojs.com/"+a+"/image.min.js",
+    g.onerror = function() {
+        (g = i.createElement(m)).src = "https://fs.piio.co/image-failover.min.js",
+        e.parentNode.insertBefore(g, e);
+    }, e.parentNode.insertBefore(g, e);
+}(document, "script", "DOMAIN-KEY"));
+</script>
 ```
-Replace `domain key` with the Piio Domain Key you get from your dashboard at https://app.piio.co/
+Replace `DOMAIN-KEY` with the Piio Domain Key you get from your dashboard at <a href="https://app.piio.co/" target="_blank">https://app.piio.co/</a>
 
 #### Preload and Preconnect
 
@@ -63,13 +76,31 @@ Add the PiioElement with the `tag` attribute set as `img` and your image as `pat
 
 #### Background image
 
-Add the Piio element with the `tag` attribute set as the element you want to have the background applied. You can add any other attributes and content to the element as it will be added.
+Add the PiioElement with the `tag` attribute set as the element you want to have the background applied. You can add any other attributes and content to the element as it will be added.
 
 Here is an example using an anchor tag:
 ```html
-<PiioElement tag="a" path="https://piio.co/img/whypiio-hero@3x.png" href="https://www.piio.co">
-     Example content
-</PiioElement>
+  <PiioElement path="https://piio.co/img/whypiio-hero@3x.png" tag="a" href="https://www.piio.co">
+      <h1>Example content</h1>
+    </PiioElement>
 ```
+
+#### Picture
+
+Add a PiioElement for each `source` you need inside the `picture` tag. Set tag as `source` and add any other attributes you need, e.g `media` attribute.
+
+This example follows the <a href="https://blog.piio.co/responsive/art-direction-showing-different-images-per-device/" target="_blank">Art Direction: Showing different images per device</a> idea.
+
+```html
+<picture>
+  <PiioElement path="https://secureservercdn.net/198.71.233.106/w4y.80f.myftpupload.com/wp-content/uploads/2020/02/backpack-desktop.jpg" tag="source" media="(min-width:969px)">
+  </PiioElement>
+  <PiioElement path="https://secureservercdn.net/198.71.233.106/w4y.80f.myftpupload.com/wp-content/uploads/2020/02/backpack-mobile.jpg" tag="source" media="(max-width:969px)">
+  </PiioElement>
+  <PiioElement path="https://secureservercdn.net/198.71.233.106/w4y.80f.myftpupload.com/wp-content/uploads/2020/02/backpack-mobile.jpg" tag="img">
+  </PiioElement>
+</picture>
+```
+
 ---
-For more settings check our Docs at https://docs.piio.co/
+For more settings check our Docs at <a href="https://docs.piio.co/" target="_blank">https://docs.piio.co/</a>
