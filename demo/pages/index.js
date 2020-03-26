@@ -1,14 +1,9 @@
 import Head from 'next/head'
-import PiioElement from '../components/piioElement'
-import PiioScript from '../components/piioScript'
+import PiioElement from '../components/piio/piioElement'
+import Piio from '../components/piio/piio'
 export default ()=>(
 
   <div>
-    <Head>
-    <link rel="preconnect" href="//pcdn.piiojs.com" />
-    <link rel="preload" as="script" href="//pcdn.piiojs.com/demo/image.min.js" />
-    </Head>
-
     <h1>Piio images for Vue.js</h1>
     <h2>Image tag example</h2>
     <PiioElement path="https://secureservercdn.net/198.71.233.106/w4y.80f.myftpupload.com/wp-content/uploads/2020/02/backpack-desktop.jpg" tag="img">
@@ -29,7 +24,7 @@ export default ()=>(
       <PiioElement path="https://secureservercdn.net/198.71.233.106/w4y.80f.myftpupload.com/wp-content/uploads/2020/02/backpack-mobile.jpg" tag="img">
       </PiioElement>
     </picture>
-    <PiioScript></PiioScript>
-    <script src="/app.min.js" async></script>
+    <Piio domainKey="demo"></Piio>
+
   </div>
 )

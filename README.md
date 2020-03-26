@@ -21,47 +21,22 @@ npm install piio-images-react
 ```
 #### Manual Installation
 
-- Download the directory Piio-image cotaining `piioElement.js`
-- Load `piioElement.js` in your code
+- Download the directory Piio-images cotaining `piio.js` and `piioElement.js`
+- Load  `piio.js` and `piioElement.js` in your code
 
 ### Import component
 
-Add the following line to import the component:
-```html
-import PiioElement from '../components/piioElement'
+Add the following lines to import the component:
+```javascript
+import Piio from '../components/Piio-images/piio'
+import PiioElement from '../components/Piio-images/piioElement'
 ```
 
-### Set up Piio on your code
-
-You need to insert Piio's script at the end of your html and before all the other JS files:
-
+Initialize the component by adding it to your template file:
 ```html
-<script>
-(function(i,m,a,g,e) {
-    e = i.getElementsByTagName(m)[0], (g = i.createElement(m)).src = "//pcdn.piiojs.com/"+a+"/image.min.js",
-    g.onerror = function() {
-        (g = i.createElement(m)).src = "https://fs.piio.co/image-failover.min.js",
-        e.parentNode.insertBefore(g, e);
-    }, e.parentNode.insertBefore(g, e);
-}(document, "script", "DOMAIN-KEY"));
-</script>
+  <Piio domainKey="DOMAIN-KEY"></Piio>
 ```
 Replace `DOMAIN-KEY` with the Piio Domain Key you get from your dashboard at <a href="https://app.piio.co/" target="_blank">https://app.piio.co/</a>
-
-#### Preload and Preconnect
-
-In order to improve connection times you can include inside your HTML Head section a link to preconnect to `pcdn.piiojs.com` and preload of Piio’s JS script.
-
-With this step you can **optimize delivery time** of Piio’s script, **deliver content faster** and give a **better user experience**.
-
-```html
-<link rel="preconnect"
-  href="//pcdn.piiojs.com">
-
-<link rel="preload"
-  as="script"
-  href="//pcdn.piiojs.com/[domain key]/image.min.js">
-  ```
 
 ### Usage
 

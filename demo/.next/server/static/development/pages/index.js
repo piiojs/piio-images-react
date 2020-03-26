@@ -93,10 +93,59 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "./components/piioElement.js":
-/*!***********************************!*\
-  !*** ./components/piioElement.js ***!
-  \***********************************/
+/***/ "./components/piio/piio.js":
+/*!*********************************!*\
+  !*** ./components/piio/piio.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+class Piio extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  constructor(props) {
+    super(props);
+
+    if (typeof document != 'undefined') {
+      this.handleScripts();
+    }
+  }
+
+  handleScripts() {
+    //Append to head
+    var preconnect = document.createElement('link');
+    preconnect.rel = 'preconnect';
+    preconnect.href = '//pcdn.piiojs.com';
+    document.head.appendChild(preconnect);
+    var preload = document.createElement('link');
+    preload.rel = 'preload';
+    preload.as = 'script';
+    preload.href = '//pcdn.piiojs.com/' + this.props.domainKey + '/image.min.js';
+    document.head.appendChild(preload);
+    var piioScript = document.createElement('script');
+    piioScript.type = 'text/javascript';
+    piioScript.textContent = '(function(i,m,a,g,e) {e = i.getElementsByTagName(m)[0], (g = i.createElement(m)).src = "//pcdn.piiojs.com/"+a+"/image.min.js",g.onerror = function() {(g = i.createElement(m)).src = "https://fs.piio.co/image-failover.min.js",e.parentNode.insertBefore(g, e);}, e.parentNode.insertBefore(g, e);}(document, "script", "' + this.props.domainKey + '"));';
+    document.head.appendChild(piioScript);
+  }
+
+  render() {
+    return null;
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Piio);
+
+/***/ }),
+
+/***/ "./components/piio/piioElement.js":
+/*!****************************************!*\
+  !*** ./components/piio/piioElement.js ***!
+  \****************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -138,59 +187,6 @@ class PiioElement extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
 
 /***/ }),
 
-/***/ "./components/piioScript.js":
-/*!**********************************!*\
-  !*** ./components/piioScript.js ***!
-  \**********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_inline_script__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-inline-script */ "react-inline-script");
-/* harmony import */ var react_inline_script__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_inline_script__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Applications/MAMP/htdocs/piio/components/piio-image-react/demo/components/piioScript.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-class PiioScript extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return __jsx("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 11
-      },
-      __self: this
-    }, __jsx(react_inline_script__WEBPACK_IMPORTED_MODULE_1___default.a, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 12
-      },
-      __self: this
-    }, `
-        (function(i,m,a,g,e) {
-e = i.getElementsByTagName(m)[0], (g = i.createElement(m)).src = "//pcdn.piiojs.com/"+a+"/image.min.js",
-g.onerror = function() {
-    (g = i.createElement(m)).src = "https://fs.piio.co/image-failover.min.js",
-    e.parentNode.insertBefore(g, e);
-}, e.parentNode.insertBefore(g, e)
-}(document, "script", "demo"));
-  `));
-  }
-
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (PiioScript);
-
-/***/ }),
-
 /***/ "./pages/index.js":
 /*!************************!*\
   !*** ./pages/index.js ***!
@@ -204,8 +200,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "next/head");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_piioElement__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/piioElement */ "./components/piioElement.js");
-/* harmony import */ var _components_piioScript__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/piioScript */ "./components/piioScript.js");
+/* harmony import */ var _components_piio_piioElement__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/piio/piioElement */ "./components/piio/piioElement.js");
+/* harmony import */ var _components_piio_piio__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/piio/piio */ "./components/piio/piio.js");
 var _jsxFileName = "/Applications/MAMP/htdocs/piio/components/piio-image-react/demo/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -218,127 +214,97 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     lineNumber: 6
   },
   __self: undefined
-}, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
+}, __jsx("h1", {
   __source: {
     fileName: _jsxFileName,
     lineNumber: 7
   },
   __self: undefined
-}, __jsx("link", {
-  rel: "preconnect",
-  href: "//pcdn.piiojs.com",
+}, "Piio images for Vue.js"), __jsx("h2", {
   __source: {
     fileName: _jsxFileName,
     lineNumber: 8
   },
   __self: undefined
-}), __jsx("link", {
-  rel: "preload",
-  as: "script",
-  href: "//pcdn.piiojs.com/demo/image.min.js",
+}, "Image tag example"), __jsx(_components_piio_piioElement__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  path: "https://secureservercdn.net/198.71.233.106/w4y.80f.myftpupload.com/wp-content/uploads/2020/02/backpack-desktop.jpg",
+  tag: "img",
   __source: {
     fileName: _jsxFileName,
     lineNumber: 9
   },
   __self: undefined
-})), __jsx("h1", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 12
-  },
-  __self: undefined
-}, "Piio images for Vue.js"), __jsx("h2", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 13
-  },
-  __self: undefined
-}, "Image tag example"), __jsx(_components_piioElement__WEBPACK_IMPORTED_MODULE_2__["default"], {
-  path: "https://secureservercdn.net/198.71.233.106/w4y.80f.myftpupload.com/wp-content/uploads/2020/02/backpack-desktop.jpg",
-  tag: "img",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 14
-  },
-  __self: undefined
-}), __jsx(_components_piioElement__WEBPACK_IMPORTED_MODULE_2__["default"], {
+}), __jsx(_components_piio_piioElement__WEBPACK_IMPORTED_MODULE_2__["default"], {
   path: "https://secureservercdn.net/198.71.233.106/w4y.80f.myftpupload.com/wp-content/uploads/2020/02/backpack-desktop.jpg",
   tag: "IMG",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 16
+    lineNumber: 11
   },
   __self: undefined
 }), __jsx("h2", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 18
+    lineNumber: 13
   },
   __self: undefined
-}, "Background example"), __jsx(_components_piioElement__WEBPACK_IMPORTED_MODULE_2__["default"], {
+}, "Background example"), __jsx(_components_piio_piioElement__WEBPACK_IMPORTED_MODULE_2__["default"], {
   path: "https://secureservercdn.net/198.71.233.106/w4y.80f.myftpupload.com/wp-content/uploads/2020/02/backpack-desktop.jpg",
   tag: "div",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 19
+    lineNumber: 14
   },
   __self: undefined
 }, __jsx("h1", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 20
+    lineNumber: 15
   },
   __self: undefined
 }, "Your website faster,your images sharper.")), __jsx("h2", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 23
+    lineNumber: 18
   },
   __self: undefined
 }, "Picture tag with multiple sources example"), __jsx("picture", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 24
+    lineNumber: 19
   },
   __self: undefined
-}, __jsx(_components_piioElement__WEBPACK_IMPORTED_MODULE_2__["default"], {
+}, __jsx(_components_piio_piioElement__WEBPACK_IMPORTED_MODULE_2__["default"], {
   path: "https://secureservercdn.net/198.71.233.106/w4y.80f.myftpupload.com/wp-content/uploads/2020/02/backpack-desktop.jpg",
   tag: "source",
   media: "(min-width:969px)",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 25
+    lineNumber: 20
   },
   __self: undefined
-}), __jsx(_components_piioElement__WEBPACK_IMPORTED_MODULE_2__["default"], {
+}), __jsx(_components_piio_piioElement__WEBPACK_IMPORTED_MODULE_2__["default"], {
   path: "https://secureservercdn.net/198.71.233.106/w4y.80f.myftpupload.com/wp-content/uploads/2020/02/backpack-mobile.jpg",
   tag: "source",
   media: "(max-width:969px)",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 27
+    lineNumber: 22
   },
   __self: undefined
-}), __jsx(_components_piioElement__WEBPACK_IMPORTED_MODULE_2__["default"], {
+}), __jsx(_components_piio_piioElement__WEBPACK_IMPORTED_MODULE_2__["default"], {
   path: "https://secureservercdn.net/198.71.233.106/w4y.80f.myftpupload.com/wp-content/uploads/2020/02/backpack-mobile.jpg",
   tag: "img",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 29
+    lineNumber: 24
   },
   __self: undefined
-})), __jsx(_components_piioScript__WEBPACK_IMPORTED_MODULE_3__["default"], {
+})), __jsx(_components_piio_piio__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  domainKey: "demo",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 32
-  },
-  __self: undefined
-}), __jsx("script", {
-  src: "/app.min.js",
-  async: true,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 33
+    lineNumber: 27
   },
   __self: undefined
 })));
@@ -376,17 +342,6 @@ module.exports = require("next/head");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
-
-/***/ }),
-
-/***/ "react-inline-script":
-/*!**************************************!*\
-  !*** external "react-inline-script" ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("react-inline-script");
 
 /***/ })
 
