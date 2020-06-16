@@ -1,0 +1,11 @@
+/* add css module styles here (optional) */
+.background {
+  min-height: 400px;
+  background-size: cover;
+  background-position: center;
+  color: #ffc107;
+}
+
+.source {
+  max-width: 100%;
+}
