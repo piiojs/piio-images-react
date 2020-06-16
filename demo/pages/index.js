@@ -1,28 +1,30 @@
 import Head from 'next/head'
-import PiioElement from '../components/piioElement'
-
+import PiioElement from '../components/piio/piioElement'
+import Piio from '../components/piio/piio'
 export default ()=>(
+
   <div>
-    <Head>
-      <link rel="preconnect" href="https://piio.co" />
-      <link rel="preconnect" href="//pcdn.piiojs.com" />
-      <link rel="preconnect" href="//piio.co" />
-      <link rel="preconnect" href="//www.googletagmanager.com" />
-      <link rel="preload" as="script" href="//js.piio.co/piio/piio.min.js" />
-    </Head>
-    <script language="javascript">
-      (function(i,m,a,g,e) {
-          e = i.getElementsByTagName(m)[0], (g = i.createElement(m)).src = "//pcdn.piiojs.com/"+a+"/image.min.js",
-          g.onerror = function() {
-              (g = i.createElement(m)).src = "https://fs.piio.co/image-failover.min.js",
-              e.parentNode.insertBefore(g, e);
-          }, e.parentNode.insertBefore(g, e);
-      }(document, "script", "demo"));
-    </script>
-    <PiioElement tag="img" path="https://www.publitas.com/blog/holiday-inspiration-great-examples-of-guides-and-christmas-catalogs/header.jpg" alt="hola" class="clase"></PiioElement>
-    <PiioElement tag="a" path="https://www.publitas.com/blog/holiday-inspiration-great-examples-of-guides-and-christmas-catalogs/header.jpg">
-      hola
+    <h1>Piio images for Vue.js</h1>
+    <h2>Image tag example</h2>
+    <PiioElement path="https://secureservercdn.net/198.71.233.106/w4y.80f.myftpupload.com/wp-content/uploads/2020/02/backpack-desktop.jpg" tag="img">
     </PiioElement>
-    <script src="/app.min.js" async></script>
+    <PiioElement path="https://secureservercdn.net/198.71.233.106/w4y.80f.myftpupload.com/wp-content/uploads/2020/02/backpack-desktop.jpg" tag="IMG">
+    </PiioElement>
+    <h2>Background example</h2>
+    <PiioElement path="https://secureservercdn.net/198.71.233.106/w4y.80f.myftpupload.com/wp-content/uploads/2020/02/backpack-desktop.jpg" tag="div">
+      <h1>Your website faster,your images sharper.</h1>
+    </PiioElement>
+
+    <h2>Picture tag with multiple sources example</h2>
+    <picture>
+      <PiioElement path="https://secureservercdn.net/198.71.233.106/w4y.80f.myftpupload.com/wp-content/uploads/2020/02/backpack-desktop.jpg" tag="source" media="(min-width:969px)">
+      </PiioElement>
+      <PiioElement path="https://secureservercdn.net/198.71.233.106/w4y.80f.myftpupload.com/wp-content/uploads/2020/02/backpack-mobile.jpg" tag="source" media="(max-width:969px)">
+      </PiioElement>
+      <PiioElement path="https://secureservercdn.net/198.71.233.106/w4y.80f.myftpupload.com/wp-content/uploads/2020/02/backpack-mobile.jpg" tag="img">
+      </PiioElement>
+    </picture>
+    <Piio domainKey="demo"></Piio>
+
   </div>
 )

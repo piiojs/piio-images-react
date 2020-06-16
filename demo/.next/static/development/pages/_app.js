@@ -8273,7 +8273,11 @@ module.exports = function(module) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! next-client-pages-loader?page=%2F_app&absolutePagePath=next%2Fdist%2Fpages%2F_app! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F_app&absolutePagePath=next%2Fdist%2Fpages%2F_app!./");
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! /Users/stellasteinfeld/Documents/Projects/react-component/demo/node_modules/next/dist/client/router.js */"./node_modules/next/dist/client/router.js");
+=======
+module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/piio/components/piio-image-react/demo/node_modules/next/dist/client/router.js */"./node_modules/next/dist/client/router.js");
+>>>>>>> d8c9fc2e7a9f4482a60f12557772ebc06766fe0c
 
 
 /***/ }),

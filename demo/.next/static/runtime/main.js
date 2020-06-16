@@ -4797,7 +4797,11 @@ function connect(options) {
       error.name = err.name;
       error.stack = err.stack; // __NEXT_DIST_DIR is provided by webpack
 
+<<<<<<< HEAD
       (0, _sourceMapSupport.rewriteStacktrace)(error, "/Users/stellasteinfeld/Documents/Projects/react-component/demo/.next");
+=======
+      (0, _sourceMapSupport.rewriteStacktrace)(error, "/Applications/MAMP/htdocs/piio/components/piio-image-react/demo/.next");
+>>>>>>> d8c9fc2e7a9f4482a60f12557772ebc06766fe0c
       return error;
     }
   };

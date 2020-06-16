@@ -1,6 +1,18 @@
 {
+<<<<<<< HEAD
   "devFiles": [],
   "pages": {
+=======
+  "devFiles": [
+    "static/development/dll/dll_4b8bef20edde04f98d3f.js",
+    "static/development/dll/dll_4b8bef20edde04f98d3f.js.map"
+  ],
+  "pages": {
+    "/": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+>>>>>>> d8c9fc2e7a9f4482a60f12557772ebc06766fe0c
     "/_app": [
       "static/runtime/webpack.js",
       "static/runtime/main.js",
@@ -13,6 +25,13 @@
     "/_polyfills": [
       "static/runtime/polyfills.js",
       "static/runtime/polyfills.js.map"
+<<<<<<< HEAD
+=======
+    ],
+    "/index": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+>>>>>>> d8c9fc2e7a9f4482a60f12557772ebc06766fe0c
     ]
   }
 }
