@@ -21,15 +21,16 @@ npm install piio-images-react
 ```
 #### Manual Installation
 
-- Download the directory Piio-images cotaining `piio.js` and `piioElement.js`
-- Load  `piio.js` and `piioElement.js` in your code
+If you aren't using npm installation, you can install Piio manually by following these steps:
+
+- Download the directory Piio-images cotaining `index.js`,`index.js.map`,`index.modern.js`,`index.modern.js.map`.
+- Load `index.js` in your code and import `{Piio, PiioElement}`
 
 ### Import component
 
 Add the following lines to import the component:
 ```javascript
-import Piio from '../components/Piio-images/piio'
-import PiioElement from '../components/Piio-images/piioElement'
+import { PiioElement, Piio } from 'piio-images-react'
 ```
 
 Initialize the component by adding it to your template file:
@@ -77,5 +78,8 @@ This example follows the <a href="https://blog.piio.co/responsive/art-direction-
 </picture>
 ```
 
+Read more about <a href="https://blog.piio.co/responsive/art-direction-showing-different-images-per-device/" target="_blank">Art Direction here</a>.
+
 ---
+
 For more settings check our Docs at <a href="https://docs.piio.co/" target="_blank">https://docs.piio.co/</a>

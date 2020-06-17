@@ -1,16 +1,16 @@
 import React from 'react'
 import styles from './styles.module.css'
 
-function selectTag(tagName, path, content) {
+function selectTag(tagName, path, content,className) {
   if (tagName === 'img') {
-    return <img class={styles.source} data-piio={path} src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+    return <img className={className} data-piio={path} src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
   }else if (tagName === 'source'){
-    return <img class={styles.source} data-piio={path} src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+    return <source className={className} data-piio={path} src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
   } else {
-    return <div class={styles.background} data-piio-bck={path}>{content}</div>
+    return <div tag={tagName} className={className} data-piio-bck={path}>{content}</div>
   }
 
 }
-export const Element = ({ tag, path, content }) => {
-  return selectTag(tag, path, content)
+export const Element = ({ tag, path, content, className }) => {
+  return selectTag(tag, path, content, className)
 }

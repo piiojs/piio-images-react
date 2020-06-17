@@ -4,4 +4,4 @@ import { Element } from './piioElement.js'
 import { Header } from './piioHeader.js'
 
 export const PiioElement = Element
-export const PiioHeader = Header
+export const Piio = Header

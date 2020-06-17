@@ -1,23 +1,22 @@
 import React, { useEffect } from 'react';
 
-var styles = {"background":"_styles-module__background__38Bir","source":"_styles-module__source__1TZM8"};
-
-function selectTag(tagName, path, content) {
+function selectTag(tagName, path, content, className) {
   if (tagName === 'img') {
     return /*#__PURE__*/React.createElement("img", {
-      class: styles.source,
+      className: className,
       "data-piio": path,
       src: "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
     });
   } else if (tagName === 'source') {
-    return /*#__PURE__*/React.createElement("img", {
-      class: styles.source,
+    return /*#__PURE__*/React.createElement("source", {
+      className: className,
       "data-piio": path,
       src: "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
     });
   } else {
     return /*#__PURE__*/React.createElement("div", {
-      class: styles.background,
+      tag: tagName,
+      className: className,
       "data-piio-bck": path
     }, content);
   }
@@ -26,9 +25,10 @@ function selectTag(tagName, path, content) {
 const Element = ({
   tag,
   path,
-  content
+  content,
+  className
 }) => {
-  return selectTag(tag, path, content);
+  return selectTag(tag, path, content, className);
 };
 
 function initScripts(domainKey) {
@@ -55,7 +55,7 @@ const Header = ({
 };
 
 const PiioElement = Element;
-const PiioHeader = Header;
+const Piio = Header;
 
-export { PiioElement, PiioHeader };
+export { Piio, PiioElement };
 //# sourceMappingURL=index.modern.js.map

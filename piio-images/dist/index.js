@@ -3,24 +3,23 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 var React = require('react');
 var React__default = _interopDefault(React);
 
-var styles = {"background":"_styles-module__background__38Bir","source":"_styles-module__source__1TZM8"};
-
-function selectTag(tagName, path, content) {
+function selectTag(tagName, path, content, className) {
   if (tagName === 'img') {
     return /*#__PURE__*/React__default.createElement("img", {
-      "class": styles.source,
+      className: className,
       "data-piio": path,
       src: "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
     });
   } else if (tagName === 'source') {
-    return /*#__PURE__*/React__default.createElement("img", {
-      "class": styles.source,
+    return /*#__PURE__*/React__default.createElement("source", {
+      className: className,
       "data-piio": path,
       src: "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
     });
   } else {
     return /*#__PURE__*/React__default.createElement("div", {
-      "class": styles.background,
+      tag: tagName,
+      className: className,
       "data-piio-bck": path
     }, content);
   }
@@ -29,8 +28,9 @@ function selectTag(tagName, path, content) {
 var Element = function Element(_ref) {
   var tag = _ref.tag,
       path = _ref.path,
-      content = _ref.content;
-  return selectTag(tag, path, content);
+      content = _ref.content,
+      className = _ref.className;
+  return selectTag(tag, path, content, className);
 };
 
 function initScripts(domainKey) {
@@ -58,8 +58,8 @@ var Header = function Header(_ref) {
 };
 
 var PiioElement = Element;
-var PiioHeader = Header;
+var Piio = Header;
 
+exports.Piio = Piio;
 exports.PiioElement = PiioElement;
-exports.PiioHeader = PiioHeader;
 //# sourceMappingURL=index.js.map
