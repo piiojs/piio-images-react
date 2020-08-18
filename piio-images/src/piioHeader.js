@@ -5,6 +5,7 @@ function initScripts(domainKey) {
   var preconnect = document.createElement('link');
   preconnect.rel = 'preconnect';
   preconnect.href = '//pcdn.piiojs.com';
+  preconnect.crossOrigin = 'anonymous';
   document.head.appendChild(preconnect);
 
   var preload = document.createElement('link');
